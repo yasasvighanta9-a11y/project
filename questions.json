@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "question": "Which data structure follows FIFO?",
+        "options": [
+            "Stack",
+            "Queue",
+            "Tree",
+            "Graph"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 2,
+        "question": "Which symbol is used for logical AND in C?",
+        "options": [
+            "&",
+            "&&",
+            "|",
+            "||"
+        ],
+        "answer": 1
+    },
+    {
+        "id": 3,
+        "question": "What is the binary representation of decimal 5?",
+        "options": [
+            "101",
+            "110",
+            "111",
+            "100"
+        ],
+        "answer": 0
+    }
+]

@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SRKR StudyMate AI</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     TOP NAVIGATION
+========================================================= -->
+
+<header class="topbar">
+
+    <div class="brand">
+        <div class="brand-icon">
+            <i class="fa-solid fa-leaf"></i>
+        </div>
+
+        <div>
+            <h2>SRKR StudyMate AI</h2>
+            <span>Learn • Focus • Grow</span>
+        </div>
+    </div>
+
+    <div class="top-actions">
+
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search your study space..."
+            >
+        </div>
+
+        <button class="icon-button" id="notificationBtn" title="Notifications">
+            <i class="fa-regular fa-bell"></i>
+        </button>
+
+        <button class="icon-button" id="themeBtn" title="Change theme">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <button class="profile-button">
+            <div class="profile-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="profile-text">
+                <strong>Student</strong>
+                <span>SRKR • CSD</span>
+            </div>
+        </button>
+
+    </div>
+</header>
+
+
+<!-- =========================================================
+     MAIN CONTAINER
+========================================================= -->
+
+<main class="main-container">
+
+
+    <!-- =====================================================
+         WELCOME SECTION
+    ====================================================== -->
+
+    <section class="welcome-section">
+
+        <div>
+            <span class="small-label">
+                <i class="fa-solid fa-sun"></i>
+                YOUR STUDY COMMAND CENTER
+            </span>
+
+            <h1>
+                Good Evening,
+                <span>Student</span> 👋
+            </h1>
+
+            <p>
+                Organize your learning, stay focused and grow every day.
+                🌱
+            </p>
+        </div>
+
+        <div class="date-box">
+            <i class="fa-regular fa-calendar"></i>
+
+            <div>
+                <strong id="currentDate">Today</strong>
+                <span id="currentDay">Let's learn something new.</span>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOCUS CENTER
+    ====================================================== -->
+
+    <section class="focus-center">
+
+        <div class="focus-left">
+
+            <div class="focus-badge">
+                <i class="fa-solid fa-bullseye"></i>
+                TODAY'S FOCUS
+            </div>
+
+            <h2 id="focusSubject">
+                Data Structures
+            </h2>
+
+            <p>
+                Your focused learning session is waiting.
+                Keep distractions away and make progress.
+            </p>
+
+            <div class="focus-progress">
+
+                <div class="progress-heading">
+                    <span>Today's progress</span>
+                    <strong id="focusPercent">78%</strong>
+                </div>
+
+                <div class="progress-track">
+                    <div
+                        class="progress-fill"
+                        id="focusProgress"
+                        style="width:78%"
+                    ></div>
+                </div>
+
+            </div>
+
+            <div class="focus-buttons">
+
+                <button
+                    class="primary-btn"
+                    onclick="startFocus()"
+                >
+                    <i class="fa-solid fa-play"></i>
+                    Start Focus
+                </button>
+
+                <button
+                    class="secondary-btn"
+                    onclick="showSection('planner')"
+                >
+                    <i class="fa-regular fa-calendar"></i>
+                    View Planner
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="focus-clock">
+
+            <div class="clock-circle">
+
+                <div>
+                    <span id="timerMinutes">25</span>
+                    <small>MIN</small>
+                </div>
+
+            </div>
+
+            <div class="focus-status">
+                <i class="fa-solid fa-lock"></i>
+                Focus protected
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STUDY SPACE
+    ====================================================== -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="section-kicker">
+                    <i class="fa-solid fa-compass"></i>
+                    YOUR STUDY SPACE
+                </span>
+
+                <h2>Everything you need to learn</h2>
+            </div>
+
+            <span class="section-note">
+                <i class="fa-solid fa-sparkles"></i>
+                Learn smarter
+            </span>
+
+        </div>
+
+
+        <div class="study-grid">
+
+
+            <!-- PLANNER -->
+
+            <button
+                class="study-card planner-card"
+                onclick="showSection('planner')"
+            >
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+
+                <div class="card-number">
+                    01
+                </div>
+
+                <h3>My Planner</h3>
+
+                <p>
+                    Organize subjects, tasks and your daily schedule.
+                </p>
+
+                <span class="card-link">
+                    Open Planner
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+
+            </button>
+
+
+            <!-- AI CODING -->
+
+            <button
+                class="study-card ai-card"
+                onclick="showSection('ai')"
+            >
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+
+                <div class="card-number">
+                    02
+                </div>
+
+                <h3>AI Coding</h3>
+
+                <p>
+                    Get coding explanations, examples and debugging help.
+                </p>
+
+                <span class="card-link">
+                    Ask AI
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+
+            </button>
+
+
+            <!-- BRAIN -->
+
+            <button
+                class="study-card brain-card"
+                onclick="showSection('brain')"
+            >
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+
+                <div class="card-number">
+                    03
+                </div>
+
+                <h3>Brain Treasures</h3>
+
+                <p>
+                    Challenge yourself with questions and mini challenges.
+                </p>
+
+                <span class="card-link">
+                    Challenge Me
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+
+            </button>
+
+
+            <!-- GAMES -->
+
+            <button
+                class="study-card games-card"
+                onclick="showSection('games')"
+            >
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-gamepad"></i>
+                </div>
+
+                <div class="card-number">
+                    04
+                </div>
+
+                <h3>Gesture Arena</h3>
+
+                <p>
+                    Play learning games using your hands and brain.
+                </p>
+
+                <span class="card-link">
+                    Enter Arena
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LOWER DASHBOARD
+    ====================================================== -->
+
+    <section class="lower-grid">
+
+
+        <!-- STUDY MATE -->
+
+        <div class="study-mate-box">
+
+            <div class="box-header">
+
+                <div class="box-icon">
+                    <i class="fa-solid fa-user-group"></i>
+                </div>
+
+                <div>
+                    <span>CONNECT</span>
+                    <h2>My Study Mate</h2>
+                </div>
+
+            </div>
+
+            <p>
+                Find classmates, create study groups and learn together.
+            </p>
+
+            <div class="mate-preview">
+
+                <div class="mate-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="mate-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="mate-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="more-avatar">
+                    +12
+                </div>
+
+                <span>
+                    students learning
+                    <strong>together</strong>
+                </span>
+
+            </div>
+
+            <button
+                class="green-btn"
+                onclick="showSection('mates')"
+            >
+                <i class="fa-solid fa-user-plus"></i>
+                Find Study Mate
+            </button>
+
+        </div>
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-box">
+
+            <div class="box-header">
+
+                <div class="box-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <div>
+                    <span>YOUR JOURNEY</span>
+                    <h2>Progress</h2>
+                </div>
+
+            </div>
+
+
+            <div class="stats-row">
+
+                <div class="mini-stat">
+                    <i class="fa-solid fa-fire"></i>
+                    <strong>7</strong>
+                    <span>Day Streak</span>
+                </div>
+
+                <div class="mini-stat">
+                    <i class="fa-solid fa-star"></i>
+                    <strong>1240</strong>
+                    <span>Points</span>
+                </div>
+
+                <div class="mini-stat">
+                    <i class="fa-solid fa-trophy"></i>
+                    <strong>6</strong>
+                    <span>Achievements</span>
+                </div>
+
+            </div>
+
+
+            <div class="overall-progress">
+
+                <div>
+                    <span>Overall completion</span>
+                    <strong>82%</strong>
+                </div>
+
+                <div class="progress-track">
+                    <div
+                        class="progress-fill"
+                        style="width:82%"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <button
+                class="text-btn"
+                onclick="showSection('progress')"
+            >
+                View full progress
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         QUICK ACTIONS
+    ====================================================== -->
+
+    <section class="quick-actions">
+
+        <button onclick="showSection('planner')">
+            <i class="fa-solid fa-plus"></i>
+            Add Task
+        </button>
+
+        <button onclick="showSection('exams')">
+            <i class="fa-solid fa-file-pen"></i>
+            Exams
+        </button>
+
+        <button onclick="showSection('brain')">
+            <i class="fa-solid fa-lightbulb"></i>
+            Quick Challenge
+        </button>
+
+        <button onclick="showSection('progress')">
+            <i class="fa-solid fa-chart-column"></i>
+            Statistics
+        </button>
+
+        <button onclick="showSection('settings')">
+            <i class="fa-solid fa-gear"></i>
+            Settings
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         DYNAMIC APP AREA
+    ====================================================== -->
+
+    <section id="appArea" class="app-area hidden">
+
+        <!-- PLANNER -->
+
+        <div id="plannerSection" class="app-section">
+
+            <div class="app-title">
+                <div>
+                    <span>
+                        <i class="fa-solid fa-book-open"></i>
+                        ORGANIZE
+                    </span>
+
+                    <h2>My Study Planner</h2>
+                </div>
+
+                <button
+                    class="green-btn"
+                    onclick="addTask()"
+                >
+                    <i class="fa-solid fa-plus"></i>
+                    Add Task
+                </button>
+            </div>
+
+
+            <div id="taskList" class="task-list"></div>
+
+        </div>
+
+
+        <!-- AI -->
+
+        <div id="aiSection" class="app-section hidden">
+
+            <div class="app-title">
+
+                <div>
+                    <span>
+                        <i class="fa-solid fa-robot"></i>
+                        AI LEARNING
+                    </span>
+
+                    <h2>AI Coding Assistant</h2>
+                </div>
+
+            </div>
+
+
+            <div class="ai-box">
+
+                <div class="ai-message">
+                    <div class="ai-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+
+                    <div>
+                        <strong>StudyMate AI</strong>
+
+                        <p>
+                            Hi! 👋 Ask me about C, C++, Python,
+                            algorithms or programming concepts.
+                        </p>
+                    </div>
+                </div>
+
+
+                <textarea
+                    id="codeQuestion"
+                    placeholder="Ask your coding question..."
+                ></textarea>
+
+                <div class="ai-actions">
+
+                    <select id="languageSelect">
+                        <option>C</option>
+                        <option>C++</option>
+                        <option>Python</option>
+                        <option>Java</option>
+                        <option>JavaScript</option>
+                    </select>
+
+                    <button
+                        class="green-btn"
+                        onclick="askAI()"
+                    >
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Ask AI
+                    </button>
+
+                </div>
+
+                <div
+                    id="aiAnswer"
+                    class="ai-answer"
+                >
+                    Your AI response will appear here.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BRAIN -->
+
+        <div id="brainSection" class="app-section hidden">
+
+            <div class="app-title">
+
+                <div>
+                    <span>
+                        <i class="fa-solid fa-brain"></i>
+                        CHALLENGE
+                    </span>
+
+                    <h2>Brain Treasures</h2>
+                </div>
+
+                <div class="question-score">
+                    ⭐ <span id="brainScore">0</span>
+                </div>
+
+            </div>
+
+
+            <div class="question-card">
+
+                <div class="question-number">
+                    Question <span id="questionNumber">1</span>
+                </div>
+
+                <h3 id="questionText">
+                    Loading question...
+                </h3>
+
+                <div id="answerOptions" class="answer-options"></div>
+
+                <button
+                    class="green-btn"
+                    onclick="nextQuestion()"
+                >
+                    Next Question
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- GAMES -->
+
+        <div id="gamesSection" class="app-section hidden">
+
+            <div class="app-title">
+
+                <div>
+                    <span>
+                        <i class="fa-solid fa-gamepad"></i>
+                        PLAY & LEARN
+                    </span>
+
+                    <h2>Gesture Arena</h2>
+                </div>
+
+            </div>
+
+
+            <div class="game-grid">
+
+                <button class="game-card" onclick="playGame('cricket')">
+                    <i class="fa-solid fa-baseball-bat-ball"></i>
+                    <h3>Hand Cricket</h3>
+                    <p>Play cricket using hand gestures.</p>
+                </button>
+
+                <button class="game-card" onclick="playGame('rps')">
+                    <i class="fa-solid fa-hand"></i>
+                    <h3>Rock Paper Scissors</h3>
+                    <p>Challenge the computer.</p>
+                </button>
+
+                <button class="game-card" onclick="playGame('math')">
+                    <i class="fa-solid fa-calculator"></i>
+                    <h3>Finger Math</h3>
+                    <p>Solve quick mathematical challenges.</p>
+                </button>
+
+                <button class="game-card" onclick="playGame('memory')">
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                    <h3>Memory Gesture</h3>
+                    <p>Test your memory and reaction.</p>
+                </button>
+
+            </div>
+
+            <div id="gameOutput" class="game-output">
+                Select a game to begin.
+            </div>
+
+        </div>
+
+
+        <!-- STUDY MATES -->
+
+        <div id="matesSection" class="app-section hidden">
+
+            <div class="app-title">
+
+                <div>
+                    <span>
+                        <i class="fa-solid fa-user-group"></i>
+                        CONNECT
+                    </span>
+
+                    <h2>My Study Mate</h2>
+                </div>
+
+            </div>
+
+
+            <div class="mate-search">
+
+                <input
+                    id="mateInput"
+                    placeholder="Search subject or study group..."
+                >
+
+                <button
+                    class="green-btn"
+                    onclick="searchMate()"
+                >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Search
+                </button>
+
+            </div>
+
+
+            <div id="mateResults" class="mate-results">
+
+                <div class="mate-result">
+                    <div class="result-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div>
+                        <strong>Data Structures Group</strong>
+                        <span>12 students • 1st Year</span>
+                    </div>
+
+                    <button>
+                        Join
+                    </button>
+                </div>
+
+                <div class="mate-result">
+                    <div class="result-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div>
+                        <strong>C Programming Group</strong>
+                        <span>8 students • CSD</span>
+                    </div>
+
+                    <button>
+                        Join
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXAMS -->
+
+        <div id="examsSection" class="app-section hidden">
+
+            <div class="app-title">
+
+                <div>
+                    <span>
+                        <i class="fa-solid fa-file-pen"></i>
+                        PREPARE
+                    </span>
+
+                    <h2>Upcoming Exams</h2>
+                </div>
+
+            </div>
+
+
+            <div class="exam-list">
+
+                <div class="exam-card">
+
+                    <div class="exam-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <div>
+                        <strong>C Programming</strong>
+                        <span>Practical Exam</span>
+                    </div>
+
+                    <div class="exam-date">
+                        <i class="fa-regular fa-calendar"></i>
+                        25 Nov
+                    </div>
+
+                </div>
+
+
+                <div class="exam-card">
+
+                    <div class="exam-icon">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+
+                    <div>
+                        <strong>Digital Logic</strong>
+                        <span>Internal Examination</span>
+                    </div>
+
+                    <div class="exam-date">
+                        <i class="fa-regular fa-calendar"></i>
+                        28 Nov
+                    </div>
+
+                </div>
+
+
+                <div class="exam-card">
+
+                    <div class="exam-icon">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+
+                    <div>
+                        <strong>Mathematics</strong>
+                        <span>Internal Examination</span>
+                    </div>
+
+                    <div class="exam-date">
+                        <i class="fa-regular fa-calendar"></i>
+                        02 Dec
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROGRESS -->
+
+        <div id="progressSection" class="app-section hidden">
+
+            <div class="app-title">
+
+                <div>
+                    <span>
+                        <i class="fa-solid fa-chart-line"></i>
+                        ANALYTICS
+                    </span>
+
+                    <h2>Your Progress</h2>
+                </div>
+
+            </div>
+
+
+            <div class="big-stat-grid">
+
+                <div>
+                    <i class="fa-solid fa-fire"></i>
+                    <strong>7</strong>
+                    <span>Day Streak</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-star"></i>
+                    <strong>1,240</strong>
+                    <span>Total Points</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-book"></i>
+                    <strong>82%</strong>
+                    <span>Study Completion</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-trophy"></i>
+                    <strong>6</strong>
+                    <span>Achievements</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SETTINGS -->
+
+        <div id="settingsSection" class="app-section hidden">
+
+            <div class="app-title">
+
+                <div>
+                    <span>
+                        <i class="fa-solid fa-gear"></i>
+                        CUSTOMIZE
+                    </span>
+
+                    <h2>Settings</h2>
+                </div>
+
+            </div>
+
+
+            <div class="settings-list">
+
+                <button onclick="toggleTheme()">
+                    <i class="fa-solid fa-moon"></i>
+                    <span>
+                        <strong>Appearance</strong>
+                        <small>Switch between light and dark mode</small>
+                    </span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <button onclick="alert('Your planner data is stored safely in this browser.')">
+                    <i class="fa-solid fa-database"></i>
+                    <span>
+                        <strong>Local Data</strong>
+                        <small>Your planner is saved automatically</small>
+                    </span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <button onclick="alert('SRKR StudyMate AI • Learning made peaceful 🌿')">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>
+                        <strong>About</strong>
+                        <small>SRKR StudyMate AI</small>
+                    </span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     BOTTOM NAVIGATION
+========================================================= -->
+
+<nav class="bottom-nav">
+
+    <button
+        class="active"
+        onclick="scrollHome()"
+    >
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+    </button>
+
+    <button onclick="showSection('planner')">
+        <i class="fa-solid fa-book-open"></i>
+        <span>Planner</span>
+    </button>
+
+    <button onclick="startFocus()">
+        <i class="fa-solid fa-bullseye"></i>
+        <span>Focus</span>
+    </button>
+
+    <button onclick="showSection('brain')">
+        <i class="fa-solid fa-brain"></i>
+        <span>Brain</span>
+    </button>
+
+    <button onclick="showSection('progress')">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Progress</span>
+    </button>
+
+</nav>
+
+
+<!-- =========================================================
+     FOCUS MODAL
+========================================================= -->
+
+<div id="focusModal" class="modal hidden">
+
+    <div class="modal-box">
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-lock"></i>
+        </div>
+
+        <h2>Focus Mode Active</h2>
+
+        <p>
+            Stay focused until your session is complete. 🌿
+        </p>
+
+        <div class="large-timer" id="largeTimer">
+            25:00
+        </div>
+
+        <button
+            class="danger-btn"
+            onclick="requestExitFocus()"
+        >
+            <i class="fa-solid fa-lock-open"></i>
+            Exit Focus
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     MATH EXIT MODAL
+========================================================= -->
+
+<div id="mathModal" class="modal hidden">
+
+    <div class="modal-box">
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-calculator"></i>
+        </div>
+
+        <h2>Focus Check</h2>
+
+        <p>
+            Solve this question to leave Focus Mode.
+        </p>
+
+        <div
+            id="mathQuestion"
+            class="math-question"
+        >
+            5 + 7 = ?
+        </div>
+
+        <input
+            type="number"
+            id="mathAnswer"
+            placeholder="Enter answer"
+        >
+
+        <button
+            class="green-btn full-btn"
+            onclick="checkMathAnswer()"
+        >
+            <i class="fa-solid fa-check"></i>
+            Submit Answer
+        </button>
+
+        <p id="mathMessage"></p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="app.js"></script>
+
+</body>
+</html>
